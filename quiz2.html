@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8"/>
+	<link rel="stylesheet" href="body.css"/>
+	<link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+	<script src="score.js" language="javascript"></script>
+	<title>Quiz</title>
+</head>
+
+	<body>
+
+		<div class="nav">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="quiz.html">Quiz</a></li>
+				<li><a href="contact.html">Contact</a></li>
+				<li><a href="creds.html">Credits</a></li>
+			</ul>
+		</div>		
+		
+		<div class="main">
+			<img src="img/question2.png" alt="" style= "width: 15em;" id="question2" usemap="deezmap"; />
+			
+			<map name="deezmap">
+				<area shape="rect" coords="138,262,235,297" onclick="toggleImage()">
+				<area shape="rect" coords="112,294,19,261" onclick="right()">
+				
+				<area shape="rect" coords="82,342,191,380" href="quiz3.html">
+
+				<script language="javascript">
+				
+				function toggleImage(){	
+
+					var img = document.getElementById("question2");
+					img.src = img.src.indexOf("fact2.png")!=-1?"img/question2.png":"img/fact2.png";
+
+				}
+				
+				function right(){
+				
+					console.log("You're right!")
+					var img = document.getElementById("question2");
+					img.src = img.src.indexOf("fact2.png")!=-1?"img/question2.png":"img/fact2.png";
+
+				}			
+				
+				</script>
+			</map>
+			
+
+		</div>
+
+	</body>
+</html>
