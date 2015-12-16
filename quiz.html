@@ -19,34 +19,40 @@
 				<li><a href="contact.html">Contact</a></li>
 				<li><a href="creds.html">Credits</a></li>
 			</ul>
-		</div>		
-		
+		</div>
+		<p onclick="right()";>test</p>
+
 		<div class="main">
 			<img src="img/question1.png" alt="" style= "width: 15em;" id="question1"  usemap="map"/>
-			
+
 			<map name="map">
 				<area shape="rect" coords="111,297,14,265" onclick="toggleImage()";>
 				<area shape="rect" coords="140,266,234,294" onclick="right()";>
-				
+
 				<area shape="rect" coords="78,348,182,395" href="quiz2.html">
 			</map>
 			<script language="javascript">
-				function toggleImage(){	
+				function toggleImage() {
 
 					var img = document.getElementById("question1");
 					img.src = img.src.indexOf("fact1.png")!=-1?"img/question1.png":"img/fact1.png";
 
 				}
-				
-				function right(){
-				
-					console.log("You're right!")
-					var img = document.getElementById("question1");
+
+				function right() {
+					var score = localStorage.score ? localStorage.score : 0,
+							img = document.getElementById("question1");
+
+					score = parseInt(score) + 1;
+					localStorage.setItem('score', score);
+
+					console.log("You're right!");
+					console.log("Your score is: " + score);
 					img.src = img.src.indexOf("fact1.png")!=-1?"img/question1.png":"img/fact1.png";
 
-				}			
+				}
 			</script>
-				
+
 
 		</div>
 
